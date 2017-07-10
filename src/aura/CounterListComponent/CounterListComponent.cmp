@@ -1,0 +1,14 @@
+<aura:component extends="c:StatefulComponent">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:iteration items="{!v.state.counters}" var="counter" indexVar="index">
+        <div>
+            <h2>Counter #{!index}</h2>
+            <h3>Value: {!counter.value}</h3>
+
+            <button onclick="{!c.increment}" data-index="{!index}">+</button>
+            <button onclick="{!c.decrement}" data-index="{!index}">-</button>
+        </div>
+    </aura:iteration>
+    <button onclick="{!c.addCounter}">Add Counter</button>
+</aura:component>
